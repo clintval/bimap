@@ -30,12 +30,12 @@ jobs:
       - name: Test Scala Code
         run: |
           ./mill --no-server --disable-ticker ${{ matrix.suite }}.test
-      # TODO: Only run this on Java 11
       - name: Create Code Coverage Report
         if: matrix.java-version == '11'
         run: |
           ./mill --no-server --disable-ticker ${{ matrix.suite }}.scoverage.xmlReport
       - name: Upload Code Coverage Report
+        if: matrix.java-version == '11'
         uses: codecov/codecov-action@v1
         with:
           override_commit: ${{ github.sha }}
