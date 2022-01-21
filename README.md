@@ -9,12 +9,12 @@ A modern bidirectional map in Scala
 ![Pacific City, Oregon](.github/img/cover.jpg)
 
 ```scala
-val map = BiMap("K" -> "V")
-map.containsKey("K") shouldBe true
-map.containsValue("K") shouldBe true
-map.containsKey("V") shouldBe true
-map.containsValue("V") shouldBe true
-map should have size 1
+val map = BiMap(1 -> "1", 2 -> "2")
+map.containsKey(1) shouldBe true
+map.containsKey(2) shouldBe true
+map.containsValue("1") shouldBe true
+map.containsValue("2") shouldBe true
+map should have size 2
 ```
 
 #### Build with this Package using Mill
