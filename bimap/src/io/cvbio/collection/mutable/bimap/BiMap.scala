@@ -1,4 +1,4 @@
-package io.cvbio.mutable.bimap
+package io.cvbio.collection.mutable.bimap
 
 import scala.collection.{Factory, StrictOptimizedIterableOps, StrictOptimizedMapOps, mutable}
 

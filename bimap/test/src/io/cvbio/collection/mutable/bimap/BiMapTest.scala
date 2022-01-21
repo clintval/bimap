@@ -1,4 +1,4 @@
-package io.cvbio.mutable.bimap
+package io.cvbio.collection.mutable.bimap
 
 import org.scalatest.OptionValues._
 import org.scalatest.flatspec.AnyFlatSpec
