@@ -6,6 +6,8 @@
 
 A modern bidirectional map in Scala
 
+![Pacific City, Oregon](.github/img/cover.jpg)
+
 ```scala
 val map = BiMap("K" -> "V")
 map.containsKey("K") shouldBe true
@@ -14,8 +16,6 @@ map.containsKey("V") shouldBe true
 map.containsValue("V") shouldBe true
 map should have size 1
 ```
-
-![Pacific City, Oregon](.github/img/cover.jpg)
 
 #### Build with this Package using Mill
 

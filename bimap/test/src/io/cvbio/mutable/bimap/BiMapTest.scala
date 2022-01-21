@@ -5,6 +5,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 import org.scalatest.matchers.should.Matchers
 
+import scala.collection.mutable
+
 /** Unit tests for [[BiMap]]. */
 class BiMapTest extends AnyFlatSpec with Matchers {
   private case class CustomHashCode(code: Int) { override def hashCode(): Int = code }
@@ -241,7 +243,25 @@ class BiMapTest extends AnyFlatSpec with Matchers {
     BiMap.from(seq) shouldBe map
   }
 
-  "BiMap.toFactory.fromSpecific" should "return build a BiMap from a specific collection" in {
+  "BiMap.fromSpecific" should "build a BiMap from a specific collection" in {
+    class SubBiMap[K, V]() extends BiMap[K, V] {
+      def fromSpecificTest(coll: IterableOnce[(K, V)]): BiMap[K, V] = super.fromSpecific(coll)
+    }
+    val map = new SubBiMap[Int, String]().fromSpecificTest(Seq((1, "1"), (2, "2")))
+    map shouldBe BiMap(1 -> "1", 2 -> "2")
+  }
+
+  "BiMap.newBuilder" should "create a builder that allows one to build up a BiMap" in {
+    class SubBiMap[K, V]() extends BiMap[K, V] {
+      def newBuilderTest: mutable.Builder[(K, V), BiMap[K, V]] = super.newSpecificBuilder
+    }
+    val builder = new SubBiMap[Int, String]().newBuilderTest
+    builder.addOne(1 -> "1")
+    builder.addOne(2 -> "2")
+    builder.result() shouldBe BiMap(1 -> "1", 2 -> "2")
+  }
+
+  "BiMap.toFactory.fromSpecific" should "build a BiMap from a specific collection" in {
     val map = BiMap.toFactory[Int, String](BiMap).fromSpecific(Seq((1, "1"), (2, "2")))
     map shouldBe BiMap(1 -> "1", 2 -> "2")
   }
