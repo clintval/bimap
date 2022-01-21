@@ -34,6 +34,9 @@ object bimap extends ScalaModule with PublishModule with ScoverageModule {
     developers     = Seq(Developer(id = "clintval", name = "Clint Valentine", url = "https://github.com/clintval"))
   )
 
+  /** The artifact name, fully resolved within the coordinate. */
+  override def artifactName: T[String] = T { "io.cvbio.collection.mutable.bimap" }
+
   /** The JAR manifest. */
   override def manifest: T[JarManifest] = super.manifest().add(ImplementationVersion.toString -> packageVersion)
 
