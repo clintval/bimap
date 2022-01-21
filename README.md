@@ -4,7 +4,7 @@
 [![Coverage Status](https://codecov.io/gh/clintval/bimap/branch/main/graph/badge.svg)](https://codecov.io/gh/clintval/bimap)
 [![Language](https://img.shields.io/badge/language-scala-c22d40.svg)](https://www.scala-lang.org/)
 
-A modern bidirectional map in Scala
+A modern bidirectional map in Scala.
 
 ![Pacific City, Oregon](.github/img/cover.jpg)
 
