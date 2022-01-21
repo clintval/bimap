@@ -7,11 +7,11 @@
 A modern bidirectional map in Scala
 
 ```scala
-val map = BiMap("key1" -> "value1")
-map.containsKey("key1") shouldBe true
-map.containsKey("value1") shouldBe true
-map.containsValue("key1") shouldBe true
-map.containsValue("value1") shouldBe true
+val map = BiMap("K" -> "V")
+map.containsKey("K") shouldBe true
+map.containsValue("K") shouldBe true
+map.containsKey("V") shouldBe true
+map.containsValue("V") shouldBe true
 map should have size 1
 ```
 
