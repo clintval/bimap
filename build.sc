@@ -8,7 +8,7 @@ import mill.scalalib.publish._
 
 import java.util.jar.Attributes.Name.{IMPLEMENTATION_VERSION => ImplementationVersion}
 
-private val packageVersion = "1.0.0"
+private val packageVersion = "2.0.0"
 
 /** A base trait for all test targets. */
 trait ScalaTest extends TestModule {
@@ -27,7 +27,7 @@ object bimap extends ScalaModule with PublishModule with ScoverageModule {
   /** POM publishing settings for this package. */
   def pomSettings: Target[PomSettings] = PomSettings(
     description    = "A modern bidirectional map in Scala",
-    organization   = "io.cvbio",
+    organization   = "io.cvbio.collection.mutable",
     url            = "https://github.com/clintval/bimap",
     licenses       = Seq(License.MIT),
     versionControl = VersionControl.github(owner = "clintval", repo = "bimap", tag = Some(packageVersion)),
@@ -35,7 +35,7 @@ object bimap extends ScalaModule with PublishModule with ScoverageModule {
   )
 
   /** The artifact name, fully resolved within the coordinate. */
-  override def artifactName: T[String] = T { "io.cvbio.collection.mutable.bimap" }
+  override def artifactName: T[String] = T { "bimap" }
 
   /** The JAR manifest. */
   override def manifest: T[JarManifest] = super.manifest().add(ImplementationVersion.toString -> packageVersion)

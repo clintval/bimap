@@ -20,11 +20,11 @@ map should have size 2
 #### Build with this Package using Mill
 
 ```scala
-ivyDeps ++ Agg(ivy"io.cvbio::io.cvbio.collection.mutable.bimap::1.0.0")
+ivyDeps ++ Agg(ivy"io.cvbio.collection.mutable::bimap::2.0.0")
 ```
 
 #### Build with this Package using SBT
 
 ```scala
-libraryDependencies += "io.cvbio" %% "io.cvbio.collection.mutable.bimap" % "1.0.0"
+libraryDependencies += "io.cvbio.collection.mutable" %% "bimap" % "2.0.0"
 ```
