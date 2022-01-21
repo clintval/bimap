@@ -8,7 +8,7 @@ import mill.scalalib.publish._
 
 import java.util.jar.Attributes.Name.{IMPLEMENTATION_VERSION => ImplementationVersion}
 
-private val packageVersion = "0.0.1"
+private val packageVersion = "1.0.0"
 
 /** A base trait for all test targets. */
 trait ScalaTest extends TestModule {
