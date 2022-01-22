@@ -17,13 +17,13 @@ map.containsValue("2") shouldBe true
 map should have size 2
 ```
 
-#### Build with this Package using Mill
+#### If Mill is your build tool
 
 ```scala
 ivyDeps ++ Agg(ivy"io.cvbio.collection.mutable::bimap::2.0.0")
 ```
 
-#### Build with this Package using SBT
+#### If SBT is your build tool
 
 ```scala
 libraryDependencies += "io.cvbio.collection.mutable" %% "bimap" % "2.0.0"
